@@ -1,0 +1,23 @@
+<?php
+/**
+ * @package adding route with generate tools
+ * @author samark chaisanguan <samarkchsngn@gmail.com>
+ * need the alias name using for create logging by Step middleware
+ */
+
+use Illuminate\Support\Facades\Route;
+
+Route::group(
+    [
+        'prefix'    => config(CONFIG_NAME . '.route.prefix.api') . '{replace_plural}',
+        'namespace' => config(CONFIG_NAME . '.route.namespace.api') . '{replace}',
+        'as'        => config(CONFIG_NAME . '.route.namespace.api') . '{replace_plural}.'
+    ],
+    function () use ($router) {
+        $router->get('/', '{replace}Controller@lists')->name('list');
+        $router->post('/', '{replace}Controller@create')->name('create');
+        $router->get('{id}', '{replace}Controller@detail')->name('detail');
+        $router->put('{id}', '{replace}Controller@update')->name('update');
+        $router->delete('{id}', '{replace}Controller@delete')->name('delete');
+    }
+);

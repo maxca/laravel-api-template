@@ -1,0 +1,111 @@
+<?php
+
+namespace App\Http\Controllers\Backend\{replace};
+
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Backend\{replace}\Store{replace}Request;
+use App\Http\Requests\Backend\{replace}\Index{replace}Request;
+use App\Http\Requests\Backend\{replace}\Detail{replace}Request;
+use App\Http\Requests\Backend\{replace}\Update{replace}Request;
+use App\Http\Requests\Backend\{replace}\Delete{replace}Request;
+use App\Repositories\{replace}\{replace}BackendRepository;
+
+/**
+ * Class {replace}BackendController
+ * @package App\Http\Controllers
+ * @author samark chaisanguan <samarkchsngn@gmail.com>
+ */
+class {replace}BackendController extends Controller
+{
+    /**
+     * @var \App\Repositories\{replace}\{replace}BackendRepository
+     */
+    protected $repository;
+
+    /**
+     * ModuleBackendController constructor.
+     * @param \App\Repositories\{replace}\{replace}BackendRepository $repository
+     */
+    public function __construct({replace}BackendRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
+    /**
+     * @param \App\Http\Requests\Backend\{replace}\Index{replace}Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|mixed|string
+     * @throws \Throwable
+     */
+    public function index(Index{replace}Request $request)
+    {
+        return $this->repository->index();
+    }
+
+    /**
+     * @param \App\Http\Requests\Backend\{replace}\Detail{replace}Request $request
+     * @param $id
+     * @return mixed
+     */
+    public function show(Detail{replace}Request $request, $id)
+    {
+        return $this->repository->show($id);
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|mixed|string
+     * @throws \Throwable
+     */
+    public function create()
+    {
+        return $this->repository->create();
+    }
+
+    /**
+     * @param \App\Http\Requests\Backend\{replace}\Store{replace}Request $request
+     * @return mixed|void
+     */
+    public function store(Store{replace}Request $request)
+    {
+        return $this->repository->store($request->all());
+    }
+
+    /**
+     * @param \App\Http\Requests\Backend\{replace}\Update{replace}Request $request
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|mixed|string
+     * @throws \Throwable
+     */
+    public function edit(Update{replace}Request $request, $id)
+    {
+        return $this->repository->edit($id);
+    }
+
+    /**
+     * @param \App\Http\Requests\Backend\{replace}\Update{replace}Request $request
+     * @param $id
+     * @return mixed|void
+     */
+    public function update(Update{replace}Request $request, $id)
+    {
+        return $this->repository->update($id, $request->all());
+    }
+
+    /**
+     * @param \App\Http\Requests\Backend\{replace}\Delete{replace}Request $request
+     * @param $id
+     * @return mixed|void
+     */
+    public function delete(Delete{replace}Request $request, $id)
+    {
+        return $this->repository->delete($id);
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|mixed|string
+     * @throws \Throwable
+     */
+    public function export()
+    {
+        return $this->repository->export();
+    }
+}

@@ -1,0 +1,37 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+/**
+ * Class {replace}
+ * @package App\Models
+ * @author samark chaisanguan <samarkchsngn@gmail.com>
+ */
+class {replace}Model extends Model
+{
+
+    /**
+     * @var string table
+     */
+    protected $table = '';
+
+    /**
+     * @var array
+     */
+    protected $fillable = [
+
+    ];
+
+    /**
+     * @var array setting date columns
+     */
+    protected $dates = [
+        'created_at',
+        'updated_at',
+    ];
+
+
+
+}

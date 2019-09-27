@@ -1,0 +1,88 @@
+<?php
+
+namespace App\Repositories\{replace};
+
+use Samark\ModuleGenerate\Repositories\Services\BackendService;
+
+/**
+ * Class {replace}BackendRepository
+ * @package App\Repositories\{replace}
+ * @author samark chaisanguan <samarkchsngn@gmail.com>
+ */
+class {replace}BackendRepository extends BackendService
+{
+    /**
+     * @var \App\Repositories\{replace}\{replace}RepositoryEloquent
+     */
+    protected $eloquent;
+
+    /**
+     * @var string container name
+     * relate for alias routing
+     */
+    protected $containerName = '{replace_sm}';
+
+    /**
+     * @var array
+     */
+    protected $views = [
+        'index'  => '{replace_sm}.index',
+        'show'   => '{replace_sm}.show',
+        'create' => '{replace_sm}.create',
+        'edit'   => '{replace_sm}.edit',
+        'export' => '{replace_sm}.export',
+    ];
+
+    /**
+     * @var array
+     */
+    protected $routes = [
+        'list'     => '{replace_sm}.list',
+        'download' => '{replace_sm}.download',
+    ];
+
+    /** @var array
+     * set relation display
+     *
+    protected $overrideColumn = [
+        'category_id' => [
+            'model'   => Media_category::class,
+            'key'     => 'category_id',
+            'message' => 'select category',
+            'pluck'   => [
+                'id'   => 'id',
+                'name' => 'name',
+            ],
+        ]
+    ];
+     */
+
+    /** @var array
+     * set relation display
+     *
+    protected $relations = [
+        'category_id' => [
+            'has'   => 'category',
+            'value' => 'name',
+            'name'  => 'category',
+        ],
+    ];
+     */
+
+
+    /**
+     * @var string export filename
+     */
+    protected $downloadFilename = '{replace_sm}_export';
+
+    /**
+     * {replace}BackendRepository constructor.
+     * @param \App\Repositories\{replace}\{replace}RepositoryEloquent $eloquent
+     */
+    public function __construct({replace}RepositoryEloquent $eloquent)
+    {
+        $this->eloquent = $eloquent;
+        parent::__construct();
+    }
+
+}

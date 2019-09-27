@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Factory
+ * @author samark chaisanguan <samarkchsngn@gmail.com>
+ */
+
+
+$factory->define(App\Models\{replace}::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+    ];
+});

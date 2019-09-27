@@ -1,0 +1,21 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+Route::group(
+    [
+        'prefix'     => config(CONFIG_NAME . '.backend.link') .'/{replace_plural}',
+        'namespace'  => 'Backend\{replace}',
+        'as'         => '{replace_sm}.'
+    ],
+    function () use ($router) {
+        $router->get('/', ['uses' => '{replace}BackendController@index'])->name('list');
+        $router->post('/create', ['uses' => '{replace}BackendController@store'])->name('store');
+        $router->get('/create', ['uses' => '{replace}BackendController@create'])->name('create');
+        $router->get('/export', ['uses' => '{replace}BackendController@export'])->name('export');
+        $router->get('{id}', ['uses' => '{replace}BackendController@show'])->name('detail');
+        $router->get('/edit/{id}', ['uses' => '{replace}BackendController@edit'])->name('edit');
+        $router->post('/edit/{id}', ['uses' => '{replace}BackendController@update'])->name('update');
+        $router->delete('{id}', ['uses' => '{replace}BackendController@delete'])->name('delete');
+    }
+);

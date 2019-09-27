@@ -1,0 +1,81 @@
+<?php
+
+namespace App\Http\Controllers\DSPLoanPlatform\{replace};
+
+use App\Http\Controllers\BaseController;
+use App\Http\Requests\Api\{replace}\Index{replace}RequestApi;
+use App\Http\Requests\Api\{replace}\Store{replace}RequestApi;
+use App\Http\Requests\Api\{replace}\Detail{replace}RequestApi;
+use App\Http\Requests\Api\{replace}\Update{replace}RequestApi;
+use App\Http\Requests\Api\{replace}\Delete{replace}RequestApi;
+use App\Repository\{replace}\{replace}Repository;
+
+/**
+ * Class {replace}Controller
+ * @package App\Http\Controllers\DSPLoanPlatform\{replace}
+ * @author samark chaisanguan <samarkchsngn@gmail.com>
+ */
+class {replace}Controller extends BaseController
+{
+    /**
+     * @var \App\Repository\{replace}Repository
+     */
+    private $repository;
+
+    /**
+     * {replace}Controller constructor.
+     * @param \App\Repository\{replace}\{replace}Repository $repository
+     */
+    public function __construct({replace}Repository $repository)
+    {
+        $this->repository = $repository;
+    }
+
+    /**
+     * @param \Requests\Index{replace}RequestApi $request
+     * @return mixed
+     */
+    public function index(Index{replace}RequestApi $request)
+    {
+        return $this->repository->get($request->all());
+    }
+
+    /**
+     * @param \Requests\Detail{replace}RequestApi $request
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse|mixed
+     */
+    public function detail(Detail{replace}RequestApi $request, $id)
+    {
+        return $this->repository->detail($id);
+    }
+
+    /**
+     * @param \Requests\Store{replace}RequestApi $request
+     * @return mixed
+     */
+    public function create(Store{replace}RequestApi $request)
+    {
+        return $this->repository->create($request->all());
+    }
+
+    /**
+     * @param \Requests\Update{replace}RequestApi $request
+     * @param $id
+     * @return mixed
+     */
+    public function update(Update{replace}RequestApi $request, $id)
+    {
+        return $this->repository->update($id, $request->all());
+    }
+
+    /**
+     * @param \Requests\Delete{replace}RequestApi $request
+     * @param $id
+     * @return mixed
+     */
+    public function delete(Delete{replace}RequestApi $request, $id)
+    {
+        return $this->repository->delete($id);
+    }
+}

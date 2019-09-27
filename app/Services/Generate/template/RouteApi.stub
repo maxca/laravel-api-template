@@ -1,0 +1,17 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+Route::group(
+    [
+        'prefix'     => 'v1/{replace_plural}',
+        'namespace'  => 'Api\{replace}',
+    ],
+    function () use ($router) {
+        $router->get('/', ['uses' => '{replace}Controller@index']);
+        $router->post('/', ['uses' => '{replace}Controller@store']);
+        $router->get('{id}', ['uses' => '{replace}Controller@show']);
+        $router->put('{id}', ['uses' => '{replace}Controller@update']);
+        $router->delete('{id}', ['uses' => '{replace}Controller@destroy']);
+    }
+);

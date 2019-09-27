@@ -1,0 +1,37 @@
+<?php
+
+namespace App\Transformers;
+
+use App\Models\{replace};
+use League\Fractal\TransformerAbstract;
+
+/**
+ * Class {replace}Transformer
+ * @package App\Transformers
+ * @author samark chaisanguan <samarkchsngn@gmail.com>
+ */
+class {replace}Transformer extends TransformerAbstract
+{
+    /**
+     * @var array
+     */
+    protected $availableIncludes = [];
+
+    /**
+     * @var array
+     */
+    protected $defaultIncludes = [];
+
+    /**
+     * @param \App\Models\{replace} ${replace_sm}
+     * @return array
+     */
+    public function transform({replace} ${replace_sm})
+    {
+        $format = [
+            'id'   => ${replace_sm}->id,
+            'name' => ${replace_sm}->name,
+        ];
+        return $format;
+    }
+}

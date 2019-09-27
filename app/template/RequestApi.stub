@@ -1,0 +1,60 @@
+<?php
+
+namespace App\Http\Requests\Api\{replace};
+
+use App\Http\Requests\Request;
+
+/**
+ * Class {action}{replace}RequestApi
+ * @package App\Http\Requests\{replace}\Api
+ * @author samark chaisanguan <samarkchsngn@gmail.com>
+ */
+
+class {action}{replace}RequestApi extends Request
+{
+    /**
+     * @var array setting params
+     * need encrypt data
+     */
+    protected $encryptParams = [];
+
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+       return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [];
+    }
+
+    /**
+     * Get custom messages for validator errors.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [];
+    }
+
+    /**
+     * Get translate messages for validator errors.
+     *
+     * @return array
+     */
+    public function attributes()
+    {
+        return [];
+    }
+}

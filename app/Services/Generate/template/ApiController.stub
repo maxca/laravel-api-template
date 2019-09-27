@@ -1,0 +1,83 @@
+<?php
+
+namespace App\Http\Controllers\Api\{replace};
+
+use App\Http\Requests\{replace}\Api\Index{replace}RequestApi;
+use App\Http\Requests\{replace}\Api\Store{replace}RequestApi;
+use App\Http\Requests\{replace}\Api\Detail{replace}RequestApi;
+use App\Http\Requests\{replace}\Api\Update{replace}RequestApi;
+use App\Http\Requests\{replace}\Api\Delete{replace}RequestApi;
+use App\Repositories\{replace}\{replace}ApiRepository;
+use Samark\ModuleGenerate\Http\Controllers\ApiController;
+
+/**
+ * Class {replace}Controller
+ * @package App\Http\Controllers\Backend\{replace}
+ * @author samark chaisanguan <samarkchsngn@gmail.com>
+ */
+class {replace}Controller extends ApiController
+{
+
+    /**
+     * @var \App\Repositories\{replace}\{replace}ApiRepository
+     */
+    private $repository;
+
+    /**
+     * {replace}Controller constructor.
+     * @param \App\Repositories\{replace}\{replace}ApiRepository $repository
+     */
+    public function __construct({replace}ApiRepository $repository)
+    {
+        $this->repository = $repository;
+        parent::__construct();
+    }
+
+    /**
+     * @param \App\Http\Requests\{replace}\Api\Index{replace}RequestApi $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function index(Index{replace}RequestApi $request)
+    {
+        return $this->repository->index();
+    }
+
+    /**
+     * @param \App\Http\Requests\{replace}\Api\Detail{replace}RequestApi $request
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function show(Detail{replace}RequestApi $request, $id)
+    {
+        return $this->repository->detail($id);
+    }
+
+    /**
+     * @param \App\Http\Requests\{replace}\Api\Store{replace}RequestApi $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function store(Store{replace}RequestApi $request)
+    {
+        return $this->repository->store($request->all());
+    }
+
+    /**
+     * @param \App\Http\Requests\{replace}\Api\Update{replace}RequestApi $request
+     * @param $id
+     * @return mixed
+     */
+    public function update(Update{replace}RequestApi $request, $id)
+    {
+        return $this->repository->update($id, $request->all());
+    }
+
+    /**
+     * @param \App\Http\Requests\{replace}\Api\Delete{replace}RequestApi $request
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function destroy(Delete{replace}RequestApi $request, $id)
+    {
+        return $this->repository->delete($id);
+    }
+}

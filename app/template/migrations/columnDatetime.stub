@@ -1,0 +1,1 @@
+            $table->dateTime('{column}');

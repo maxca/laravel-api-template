@@ -1,0 +1,1 @@
+            $table->enum('{column}',[{value}])->nullable();

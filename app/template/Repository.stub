@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Repository\{replace};
+
+use App\Models\{replace}Model;
+use App\Repository\BaseRepository;
+use App\Repository\Procedures\{replace}Procedures;
+
+/**
+ * Class ProductHistoryRepository
+ * @package App\Repoistory\{replace}
+ * @author samark chaisanguan <samarkchsngn@gmail.com>
+ */
+class {replace}Repository extends BaseRepository
+{
+    /**
+     * @var string
+     * setting custom version of api
+     */
+    protected $version = '1.0.0';
+
+    /**
+     * @var array
+     * setting searchable columns
+     */
+    protected $searchable = [];
+
+    /**
+     * @var string
+     */
+    protected $eloquent = {replace}Model::class;
+
+}

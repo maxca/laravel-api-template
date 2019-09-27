@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Services\{replace};
+
+use App\Services\DataProvider\DataProvider;
+
+/**
+ * Class ProductHistory
+ * @package App\Services\{replace}
+ * @author samark chaisanguan <samarkchsngn@gmail.com>
+ */
+class {replace}Service extends DataProvider
+{
+    /**
+     * @var string setting endpoint of internal service api.
+     */
+    protected $endpoint = '';
+
+}

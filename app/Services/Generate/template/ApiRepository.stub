@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Repositories\{replace};
+
+use App\Transformers\{replace}Transformer;
+use Samark\ModuleGenerate\Repositories\Services\ApiRepositoryService;
+
+/**
+ * Class {replace}ApiRepository
+ * @package App\Repositories\{replace}
+ * @author samark chaisanguan <samarkchsngn@gmail.com>
+ */
+class {replace}ApiRepository extends ApiRepositoryService
+{
+    /**
+     * {replace}ApiRepository constructor.
+     * @param \App\Repositories\{replace}\{replace}RepositoryEloquent $eloquent
+     * @param \App\Transformers\{replace}Transformer $transformer
+     */
+    public function __construct(
+        {replace}RepositoryEloquent $eloquent,
+        {replace}Transformer $transformer
+    )
+    {
+        $this->eloquent    = $eloquent;
+        $this->transformer = $transformer;
+        parent::__construct();
+    }
+}

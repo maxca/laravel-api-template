@@ -1,0 +1,86 @@
+<?php
+
+namespace App\Repository\Procedures;
+
+/**
+ * Class WithdrawHistory
+ * @package App\Repository\Procedures
+ * @author samark chaisanguan <samarkchsngn@gmail.com>
+ */
+class {replace}Procedures extends BaseProcedures
+{
+    /**
+     * @var array
+     */
+    protected $nextKey = 'nextPage';
+
+    /**
+     * @var string
+     * setting key to translate message lists
+     * response
+     */
+    protected $namespace = '{replace_sm}.transform';
+
+    /**
+     * @var string
+     * setting next value in case
+     * having pagination using
+     */
+    protected $nextValue = '-';
+
+    /**
+     * @var string
+     */
+    protected $key = '{replace_sm}.';
+
+    /**
+     * @var array
+     */
+    protected $mappingColumn = [
+        'id'      => 'id',
+        'title'   => 'title',
+    ];
+
+    /**
+     * @var array
+     * setting model column convert
+     */
+    protected $dates = [
+        'dateColumn' => true,
+    ];
+
+    /**
+     * @var array
+     */
+    protected $currency = [
+        'currencyColumns' => true,
+    ];
+
+    /**
+     * @var array
+     */
+    protected $notFoundMessage = '{replace_sm}.not_found';
+
+    /**
+     * @var array
+     */
+    protected $sortingList = [
+        'id_asc',
+        'id_desc',
+    ];
+
+    /**
+     * @var string setting store procedures name
+     */
+    protected $procedure = '';
+
+    /**
+     * @var array setting errors mapping code
+     * with translate
+     */
+    protected $mappingCode = [
+        '-1000' => 'support.history.code_1000'
+    ];
+
+
+}

@@ -1,0 +1,9 @@
+<?php
+/*
+ * return config lang
+ * setting translate language by components
+ **/
+
+ return [
+
+ ];
